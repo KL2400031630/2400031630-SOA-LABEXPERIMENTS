@@ -1,0 +1,21 @@
+package com.klu.restaurant.controller;
+
+import com.klu.restaurant.model.Restaurant;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class RestaurantController {
+
+    @GetMapping("/restaurants")
+    public List<Restaurant> getRestaurants() {
+
+        return List.of(
+                new Restaurant(1, "Pizza Palace", "Bangalore"),
+                new Restaurant(2, "Burger House", "Hyderabad"),
+                new Restaurant(3, "Spice Garden", "Chennai")
+        );
+    }
+}

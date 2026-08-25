@@ -1,0 +1,5 @@
+package com.klu.restaurant.controller;
+
+public class RestaurantController {
+
+}

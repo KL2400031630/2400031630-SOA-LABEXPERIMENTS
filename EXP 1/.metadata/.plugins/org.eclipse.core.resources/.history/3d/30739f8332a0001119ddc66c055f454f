@@ -1,0 +1,5 @@
+package com.klu.restaurant.repository;
+
+public class RestaurantRepository {
+
+}
