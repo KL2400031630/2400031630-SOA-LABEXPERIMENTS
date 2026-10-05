@@ -1,19 +1,40 @@
 package com.klu.cartservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class CartController {
 
     @GetMapping("/cart")
-    public String getCart() {
-        return "Cart Service is running on port 8083";
+    public List<Map<String, Object>> getCart() {
+
+        return List.of(
+                Map.of(
+                        "id", 1,
+                        "product", "Laptop",
+                        "quantity", 1,
+                        "price", 75000
+                ),
+                Map.of(
+                        "id", 2,
+                        "product", "Wireless Mouse",
+                        "quantity", 2,
+                        "price", 1200
+                )
+        );
     }
 
     @GetMapping("/cart/{id}")
-    public String getCartById(@PathVariable int id) {
-        return "Cart " + id + " - Cart Service on port 8083";
+    public Map<String, Object> getCartById(@PathVariable int id) {
+
+        return Map.of(
+                "id", id,
+                "product", "Product " + id,
+                "quantity", 1,
+                "price", 999
+        );
     }
 }
